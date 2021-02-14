@@ -39,6 +39,7 @@ public class ObjectTrigger : MonoBehaviour
 
         _mm = _mc.GetComponent<CameraManager>()._messageManager;
 
+
     }
 
     // Update is called once per frame

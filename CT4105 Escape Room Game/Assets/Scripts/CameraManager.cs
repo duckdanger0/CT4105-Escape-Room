@@ -10,6 +10,7 @@ public class CameraManager : MonoBehaviour
     public bool _moving = false;
 
     public string _nameOfResetParameterInAnimator;
+
     public ObjectsManager _objectsManager;
 
     public MessageManager _messageManager;

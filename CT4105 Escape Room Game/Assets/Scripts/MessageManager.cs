@@ -7,6 +7,7 @@ public class MessageManager : MonoBehaviour
 {
 
     Coroutine _messageReset;
+
     private ObjectsManager _om;
 
     // Start is called before the first frame update
