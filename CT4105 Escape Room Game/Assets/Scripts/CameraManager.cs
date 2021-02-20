@@ -9,12 +9,14 @@ public class CameraManager : MonoBehaviour
     [HideInInspector]
     public bool _moving = false;
 
-    public string _nameOfResetParameterInAnimator;
+    [HideInInspector]
+    public bool _checkFade = false;
 
+    public string _nameOfResetParameterInAnimator;
     public ObjectsManager _objectsManager;
 
     public MessageManager _messageManager;
-    
+
     private string _co;
 
     private int fingerID = -1;
@@ -28,7 +30,7 @@ public class CameraManager : MonoBehaviour
             fingerID = 0; 
 
         #endif
-    
+
     }
 
     // Update is called once per frame
@@ -57,34 +59,33 @@ public class CameraManager : MonoBehaviour
                     Debug.Log( hit.collider.name );
                     
 
-                        foreach( CameraLocations _go in _objectsManager._cameraLocations )
+                    foreach( CameraLocations _go in _objectsManager._cameraLocations )
+                    {
+
+                        _co = hit.collider.name;
+
+                        if( _go._cameraLocation != null )
                         {
-
-                            _co = hit.collider.name;
-
-                            if( _go._cameraLocation != null )
+                            
+                            if( hit.collider.name == _go._cameraLocation.name )
                             {
-                                
-                                if( hit.collider.name == _go._cameraLocation.name )
+                            
+                                _moving = true;
+
+                                GetComponent<Animator>().SetTrigger( _co );
+
+                                if( _go._cameraLocation.GetComponent<ObjectTrigger>() != null )
                                 {
-                                
-                                    _moving = true;
 
-                                    GetComponent<Animator>().SetTrigger( _co );
+                                    _go._cameraLocation.GetComponent<ObjectTrigger>().enableObjectActions();
 
-                                    if( _go._cameraLocation.GetComponent<ObjectTrigger>() != null )
-                                    {
-
-                                        _go._cameraLocation.GetComponent<ObjectTrigger>().enableObjectActions();
-
-                                    }
-                                    
-
-                                }
+                                }                                    
 
                             }
 
                         }
+
+                    }
 
 
                 }
@@ -97,27 +98,43 @@ public class CameraManager : MonoBehaviour
 
     void OnGUI()
     {
-        
-        Event e = Event.current;
 
-        if ( e.isMouse )
+        if( GetComponent<FadeToOrFromBlack>() )
         {
-
-            if( e.clickCount == 2 )
-            {
-                
-                _moving = false;
-
-                _objectsManager.disableActions( null );
-                
-                _objectsManager.hideActions();
-
-                GetComponent<Animator>().SetTrigger( _nameOfResetParameterInAnimator );
-                
-            }
+            
+            _checkFade = GetComponent<FadeToOrFromBlack>()._fadeToBlack;
 
         }
 
+        if( !_checkFade )
+        {
+
+            Event e = Event.current;
+
+            if ( e.isMouse )
+            {
+
+                if( e.clickCount == 2 )
+                {
+                    
+                    _moving = false;
+
+                    _objectsManager.disableActions( null );
+                    
+                    _objectsManager.hideActions();
+
+                    GetComponent<Animator>().SetTrigger( _nameOfResetParameterInAnimator );
+                    
+                } 
+                
+            }
+
+        } else {
+
+            
+
+        }
+    
     }
 
 }

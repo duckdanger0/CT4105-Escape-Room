@@ -2,21 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using TMPro;
 
 public class ObjectTrigger : MonoBehaviour
 {
 
+    [Header("Does this object have animation?")]
     public Animator _objectAnimator;
-    public bool _activated = false;
-    public GameObject _requiredGameObjectToTrigger;
+    public string _objectAnimatorActivateParameterName = "Open";
+    public string _objectAnimatorDeactivateParameterName = "Close";
 
+    [HideInInspector]
+    public bool _activated = false;
+
+    [Header("Does the object require another object to trigger the animation?")]  
+    public GameObject _requiredGameObjectToTrigger;
     public string _requiredGameObjectMessage;
-    public float _requiredGameObjectMessageWaitTime = 2f;        
+    public float _requiredGameObjectMessageWaitTime = 2f;
+    public string _newLookAtMessageAfterActivated;  
+    public float _newLookAtMessageWaittimeAfterActivated = 2f;  
+
+
+    [Header("What actions does this object offer?")]   
     public bool _lookAt;
     public bool _open;
     public bool _close;
+    public bool _investigate;
 
     private GameObject _mc;
     private ObjectsManager _om;
@@ -39,7 +52,6 @@ public class ObjectTrigger : MonoBehaviour
 
         _mm = _mc.GetComponent<CameraManager>()._messageManager;
 
-
     }
 
     // Update is called once per frame
@@ -60,132 +72,219 @@ public class ObjectTrigger : MonoBehaviour
 
                 }
 
-                Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
-                
-                RaycastHit hit;
-                
-                if( Physics.Raycast( ray, out hit ) )
+                if ( !_mc.GetComponent<CameraManager>()._checkFade )
                 {
-                                    
-                    if( hit.collider.name == gameObject.name )                    
+
+                    Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+                    
+                    RaycastHit hit;
+                    
+                    if( Physics.Raycast( ray, out hit ) )
                     {
-
-                        Debug.Log( hit.collider.name );
-
-                        if( !_activated )
+                                        
+                        if( hit.collider.name == gameObject.name )                    
                         {
 
-                            enableObjectActions();
-                            
-                            switch( _om._currentAction )
+                            Debug.Log( hit.collider.name );
+
+                            if( !_activated )
                             {
 
-                                case "Look_At":
-
-                                    _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._lookAtMessage, gameObject.GetComponent<ObjectMeta>()._lookAtMessageWaitTime );
-
-                                break;
-
-                                case "Open":
+                                enableObjectActions();
                                 
-                                    if( !_activated )
-                                    {
+                                switch( _om._currentAction )
+                                {
 
-                                        foreach( GameObject _co in _om._collectedObjects )
+                                    case "Look_At":
+
+                                        _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._lookAtMessage, gameObject.GetComponent<ObjectMeta>()._lookAtMessageWaitTime );
+
+                                    break;
+
+                                    case "Open":
+                                    
+                                        if( !_activated )
                                         {
 
-                                            if( _co != null )
+                                            foreach( GameObject _co in _om._collectedObjects )
                                             {
 
-                                                if( _co.name == _requiredGameObjectToTrigger.name )
+                                                if( _co != null )
                                                 {
 
-                                                    _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._openMessage, gameObject.GetComponent<ObjectMeta>()._openMessageWaitTime );
+                                                    if( _co.name == _requiredGameObjectToTrigger.name )
+                                                    {
 
-                                                    GetComponent<Animator>().SetTrigger( "Open" );
+                                                        _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._openMessage, gameObject.GetComponent<ObjectMeta>()._openMessageWaitTime );
 
-                                                    _activated = true;
+                                                        GetComponent<Animator>().SetTrigger( _objectAnimatorActivateParameterName );
 
-                                                    _om._currentAction = "";
+                                                        _activated = true;
 
-                                                    return;
+                                                        _om._currentAction = "";
 
-                                                }    
+                                                        return;
 
-                                            }                                   
+                                                    }    
+
+                                                }                                   
+
+                                            }
+                                                    
+                                            _mm.showMessage( _requiredGameObjectMessage, _requiredGameObjectMessageWaitTime );
+
+                                        } else {
+
+                                            _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._openMessage, gameObject.GetComponent<ObjectMeta>()._openMessageWaitTime );
+
+                                            GetComponent<Animator>().SetTrigger( _objectAnimatorActivateParameterName );
+
+                                            _om.hideActions();
+
+                                            _om.disableActions( null );
 
                                         }
+
+                                    break;
+
+                                    case "Close":
+
+                                        if( !_activated )
+                                        {
+                                            
+                                            _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._closeMessage, gameObject.GetComponent<ObjectMeta>()._closeMessageWaitTime );
+
+                                        } else {
+
+                                            _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._closeMessage, gameObject.GetComponent<ObjectMeta>()._closeMessageWaitTime );
+
+                                            GetComponent<Animator>().SetTrigger( _objectAnimatorDeactivateParameterName );
+                                            
+                                            _om.hideActions();
+
+                                            _om.disableActions( null );
+
+                                        }
+
+                                    break;
+
+                                    case "Investigate":
+
+                                        _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._investigateMessage, gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime );
+
+                                        if( _mc.GetComponent<FadeToOrFromBlack>() == null )
+                                        {     
+
+                                            StartCoroutine( loadNextScene( gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime ) );
+
+                                        } else {
+
+
+                                            if( gameObject.GetComponent<ObjectMeta>()._fadeSceneOut )
+                                            {
                                                 
-                                        _mm.showMessage( _requiredGameObjectMessage, _requiredGameObjectMessageWaitTime );
+                                                _mc.GetComponent<FadeToOrFromBlack>().fadeToBlack( gameObject.GetComponent<ObjectMeta>()._fadeSceneOutSpeed, 
+                                                                                            gameObject.GetComponent<ObjectMeta>()._waitTimeBeforeFadeStart,
+                                                                                            gameObject.GetComponent<ObjectMeta>()._waitTimeAfterFadeEnds, 
+                                                                                            gameObject.GetComponent<ObjectMeta>()._nameOfNextSceneToGoTo );
 
-                                    } else {
+                                            } else {
 
+                                                _mc.GetComponent<FadeToOrFromBlack>().fadeToBlack( 10000, 
+                                                                                                   gameObject.GetComponent<ObjectMeta>()._waitTimeBeforeFadeStart, 
+                                                                                                   0, 
+                                                                                                   gameObject.GetComponent<ObjectMeta>()._nameOfNextSceneToGoTo );
+
+                                            }
+
+                                        }
+
+                                    break;
+
+                                }             
+
+                                _om._currentAction = "";
+
+                            } else {
+
+                                enableObjectActions();
+
+                                switch( _om._currentAction )
+                                {
+
+                                    case "Look_At":
+
+                                        _mm.showMessage( _newLookAtMessageAfterActivated, _newLookAtMessageWaittimeAfterActivated );
+
+                                    break;
+
+                                    case "Open":
+                                    
                                         _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._openMessage, gameObject.GetComponent<ObjectMeta>()._openMessageWaitTime );
 
-                                        GetComponent<Animator>().SetTrigger( "Open" );
-
-                                    }
-
-                                break;
-
-                                case "Close":
-
-                                    if( !_activated )
-                                    {
+                                        GetComponent<Animator>().SetTrigger( _objectAnimatorActivateParameterName );
                                         
+                                        _om.hideActions();
+
+                                        _om.disableActions( null );
+
+                                    break;
+
+                                    case "Close":
+
                                         _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._closeMessage, gameObject.GetComponent<ObjectMeta>()._closeMessageWaitTime );
 
-                                    } else {
+                                        GetComponent<Animator>().SetTrigger( _objectAnimatorDeactivateParameterName );
 
-                                        _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._closeMessage, gameObject.GetComponent<ObjectMeta>()._closeMessageWaitTime );
+                                        _om.hideActions();
 
-                                        GetComponent<Animator>().SetTrigger( "Close" );
+                                        _om.disableActions( null ); 
 
-                                    }
+                                    break;
 
-                                break;
+                                    case "Investigate":
 
-                            }             
+                                        _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._investigateMessage, gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime );
 
-                            _om._currentAction = "";
+                                        if( _mc.GetComponent<FadeToOrFromBlack>() == null )
+                                        {     
 
-                        } else {
+                                            StartCoroutine( loadNextScene( gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime ) );
 
-                            enableObjectActions();
+                                        } else {
 
-                            switch( _om._currentAction )
-                            {
 
-                                case "Look_At":
+                                            if( gameObject.GetComponent<ObjectMeta>()._fadeSceneOut )
+                                            {
+                                                
+                                                _mc.GetComponent<FadeToOrFromBlack>().fadeToBlack( gameObject.GetComponent<ObjectMeta>()._fadeSceneOutSpeed, 
+                                                                                            gameObject.GetComponent<ObjectMeta>()._waitTimeBeforeFadeStart, 
+                                                                                            gameObject.GetComponent<ObjectMeta>()._waitTimeAfterFadeEnds, 
+                                                                                            gameObject.GetComponent<ObjectMeta>()._nameOfNextSceneToGoTo );
 
-                                    _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._lookAtMessage, gameObject.GetComponent<ObjectMeta>()._lookAtMessageWaitTime );
+                                            } else {
 
-                                break;
+                                                _mc.GetComponent<FadeToOrFromBlack>().fadeToBlack( 10000, 
+                                                                                                   gameObject.GetComponent<ObjectMeta>()._waitTimeBeforeFadeStart, 
+                                                                                                   0, 
+                                                                                                   gameObject.GetComponent<ObjectMeta>()._nameOfNextSceneToGoTo );
 
-                                case "Open":
-                                
-                                    _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._openMessage, gameObject.GetComponent<ObjectMeta>()._openMessageWaitTime );
+                                            }
 
-                                    GetComponent<Animator>().SetTrigger( "Open" );
+                                        }
 
-                                break;
+                                    break;
 
-                                case "Close":
+                                }             
 
-                                    _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._closeMessage, gameObject.GetComponent<ObjectMeta>()._closeMessageWaitTime );
+                                _om._currentAction = "";
+                            
+                            }
 
-                                    GetComponent<Animator>().SetTrigger( "Close" );
-
-                                break;
-
-                            }             
-
-                            _om._currentAction = "";
-                        
                         }
-
+                            
                     }
-                        
+                    
                 }
 
             }   
@@ -236,6 +335,34 @@ public class ObjectTrigger : MonoBehaviour
 
         }
 
-    }    
+        if( _investigate )
+        {
+            
+            _om._investigate.SetActive( true );
+
+            _om._investigate.GetComponent<Button>().interactable = true;
+
+        } else {
+
+            _om._investigate.SetActive( false );
+
+        }
+
+    }
+
+    IEnumerator loadNextScene( float waitTime )
+    {
+        
+        _mc.GetComponent<CameraManager>()._checkFade = true;
+
+        _om.hideActions();
+
+        _om.disableActions( null );
+
+        yield return new WaitForSeconds( waitTime );
+
+        SceneManager.LoadScene( gameObject.GetComponent<ObjectMeta>()._nameOfNextSceneToGoTo );        
+       
+    }     
 
 }

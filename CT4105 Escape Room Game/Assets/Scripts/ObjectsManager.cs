@@ -24,7 +24,9 @@ public class ObjectsManager : MonoBehaviour
     public GameObject _open;
 
     public GameObject _close;
-    
+
+    public GameObject _investigate;
+
     public CameraLocations[] _cameraLocations = new CameraLocations[100];
 
     public List<GameObject> _collectedObjects = new List<GameObject>();
@@ -59,8 +61,6 @@ public class ObjectsManager : MonoBehaviour
 
     }
 
-
-
     public void enableActions()
     {
 
@@ -73,6 +73,9 @@ public class ObjectsManager : MonoBehaviour
         _close.SetActive( true );
         _close.GetComponent<Button>().interactable = true;
 
+        _investigate.SetActive( true );
+        _investigate.GetComponent<Button>().interactable = true;
+
     }
 
     public void disableActions( Button button )
@@ -81,8 +84,10 @@ public class ObjectsManager : MonoBehaviour
         _lookAt.GetComponent<Button>().interactable = false;
 
         _open.GetComponent<Button>().interactable = false;
-
+        
         _close.GetComponent<Button>().interactable = false;
+
+        _investigate.GetComponent<Button>().interactable = false;
 
         if( button != null )
         {
