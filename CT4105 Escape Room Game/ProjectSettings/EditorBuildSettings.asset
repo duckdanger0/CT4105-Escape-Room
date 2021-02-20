@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ArcadeMachineScene.unity
     guid: 39b0728ea5931384fa520cbcb0faf45b
+  - enabled: 1
+    path: Assets/Scenes/BallPitScene.unity
+    guid: e4b61149aa8e3474bbabd235a19c1d23
   m_configObjects: {}
