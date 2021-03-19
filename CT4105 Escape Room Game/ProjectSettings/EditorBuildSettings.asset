@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BallPitScene.unity
     guid: e4b61149aa8e3474bbabd235a19c1d23
+  - enabled: 1
+    path: Assets/Scenes/Floor 4 - Maze.unity
+    guid: c52322f26b0949c44afdabdc04fb72bc
   m_configObjects: {}

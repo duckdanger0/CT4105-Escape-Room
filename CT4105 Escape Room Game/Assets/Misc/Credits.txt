@@ -1,0 +1,4 @@
+Developers/Designers - Owen Morris & Danny Lee
+Simple Input System - yasirkula
+First Person Controller - ThirteeNov (Ciihuy)
+*Include UoG and NMS logo*
