@@ -1,4 +1,5 @@
 Developers/Designers - Owen Morris & Danny Lee
+Code Debugging - Joshua Riches
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)
 *Include UoG and NMS logo*
