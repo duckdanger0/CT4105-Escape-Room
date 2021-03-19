@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class SightLine : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    [SerializeField]
+    GameObject Jaakko;
 
     // Update is called once per frame
     void Update()
@@ -18,9 +16,7 @@ public class SightLine : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
 
-            GameObject Jaakko = hit.transform.gameObject;
-
-            if (Jaakko.tag == "Jaakko")
+            if (hit.transform.tag == "Jaakko")
             {
                 Jaakko.GetComponent<Jaakko>().Speed = 0f;
             }
@@ -31,7 +27,6 @@ public class SightLine : MonoBehaviour
         }
         else
         {
-            GameObject Jaakko = hit.transform.gameObject;
             Jaakko.GetComponent<Jaakko>().Speed = 5f;
         }
     }
