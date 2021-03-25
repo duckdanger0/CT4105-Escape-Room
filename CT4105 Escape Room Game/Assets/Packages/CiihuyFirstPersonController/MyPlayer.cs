@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MyPlayer : MonoBehaviour {
 	public float speed;
-	private Rigidbody rb;
 	public MyJoystick joystick;
-	
-	void Start () {
-		rb = GetComponent<Rigidbody> ();
-	}
 	
 	void FixedUpdate () {
 		//Vector3 movement = new Vector3 (joystick.Horizontal () * Time.deltaTime, 0.0f, joystick.Vertical() * Time.deltaTime);
