@@ -7,6 +7,12 @@ ModelImporter:
       74: 885944232402757753
     second: Armature|Action
   - first:
+      74: -9125523489441110064
+    second: Armature|Action.001
+  - first:
+      74: 4864456487366326693
+    second: Armature|Action.002
+  - first:
       74: 4781951162920444690
     second: Armature|ArmatureAction
   externalObjects: {}

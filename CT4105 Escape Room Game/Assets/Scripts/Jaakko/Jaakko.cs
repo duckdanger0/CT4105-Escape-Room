@@ -4,78 +4,75 @@ using UnityEngine;
 public class Jaakko : MonoBehaviour
 
 {
-
+    
     public GameObject Enemy;
     public Transform Player;
     private float Speed;
-    private float Gravity = -9.81f;
-    private float timeLooking;
     private bool isChasing;
+    public GameObject origin;
+    private float Patience;
+    private float Timer;
 
-    [SerializeField]
-    private Transform Groundcheck;
-    private float groundDistance = 0.1f;
-    [SerializeField]
-    private LayerMask groundMask;
-    Vector3 Velocity;
-    bool isGrounded;
+
+    public AudioSource jaakkoChase;
 
     private Animator animator;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        Patience = gameObject.GetComponent<RNG>().RandomInt();
     }
 
     void Update()
     {
 
-        transform.LookAt(Player);
-
-        //transform.position.y = 0f;
-
-        isGrounded = Physics.CheckSphere(Groundcheck.position, groundDistance, groundMask);
-        if(isGrounded && Velocity.y < 0)
+        Timer += Time.deltaTime;
+        if (Timer >= 1)
         {
-            Velocity.y = -2f;
+            Patience = gameObject.GetComponent<RNG>().RandomInt();
+            Timer = 0;
         }
-        Velocity.y += Gravity * Time.deltaTime;
+
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+        transform.LookAt(new Vector3(Player.position.x, 0f, Player.position.z));
 
 
-        Vector3 screenPoint = Player.GetChild(0).GetComponent<Camera>().WorldToViewportPoint(gameObject.transform.position);
-        bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+
+        Vector3 screenPoint = Player.GetChild(0).GetComponent<Camera>().WorldToViewportPoint(origin.transform.position);
+        Vector3 screenPointBottom = Player.GetChild(0).GetComponent<Camera>().WorldToViewportPoint(gameObject.transform.position);
+        bool onScreen = (screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1)||
+                        (screenPointBottom.z > 0 && screenPointBottom.x > 0 && screenPointBottom.x < 1 && screenPointBottom.y > 0 && screenPointBottom.y < 1);
 
         if (onScreen && !isChasing) 
         {
             Speed = 0f;
             animator.SetBool("Looking", true);
 
-            //Chase
-            timeLooking += Time.deltaTime;
-            if (timeLooking >= 3f)
+            
+
+            if (Patience == 5)
             {
                 isChasing = true;
                 animator.SetBool("Charge", true);
-                Speed = 10f;
+                Speed = 15f;
+                jaakkoChase.Play();
             }
         }
         else if(!onScreen && !isChasing)
         {
             Speed = 1f;
             animator.SetBool("Looking", false);
-            timeLooking = 0f;
         }
 
 
-        Enemy.transform.position = new Vector3(transform.position.x, Velocity.y, transform.position.z);
+        Enemy.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         float step = Speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Player.position, step);
 
 
     }
-
-
-
 
 
 }
