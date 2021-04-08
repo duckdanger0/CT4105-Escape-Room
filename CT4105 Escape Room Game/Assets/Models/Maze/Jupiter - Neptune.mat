@@ -84,7 +84,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DetailSaturation: 0
     - _DstBlend: 0
-    - _EmissionIntensity: 0
+    - _EmissionIntensity: 0.332
     - _EnableDetailMask: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
