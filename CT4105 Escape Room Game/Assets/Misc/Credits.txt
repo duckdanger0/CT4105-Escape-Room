@@ -1,5 +1,13 @@
 Developers/Designers - Owen Morris & Danny Lee
 Code Debugging - Joshua Riches
+Character Art - Jordan Brayne
+
+Songs:
+Karl Casey @ White Bat Audio:
+Hackers
+The Body
+Halloween FX Productions - Robotic Screams
+
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)
 *Include UoG and NMS logo*

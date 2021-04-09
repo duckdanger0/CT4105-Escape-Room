@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 113
+  controlID: 60
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 114
+  controlID: 61
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 115
+  controlID: 62
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -423,9 +423,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0cd9ffff
-      m_LastClickedID: -9972
-      m_ExpandedIDs: 4cd7ffff4ed7ffff50d7ffff54d7ffff5cd8ffff5ed8ffff60d8ffff08d9ffff0ed9ffff10d9ffff12d9fffffcfafffffefaffff04fbffff0efbffff68fbffff7a370000
+      m_SelectedIDs: 5665ffff
+      m_LastClickedID: 0
+      m_ExpandedIDs: f867fffffa67fffffe67ffff0068ffff3469ffff3669ffff3869ffffbce6ffffe0e6ffff1ae7ffff24e7ffff8ce7ffff26ebffff2cfaffff46faffff4efaffff5afaffffc6faffffc8faffffccfaffffdafaffff0efbffff14fbffff16fbffff1afbffff28fbffff50fbffff52fbffff56fbffff64fbffff68fbffff7e370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: d69a67902db7f994ca099bec79d22ce1
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -13.061281, y: -8.6070175, z: -8.031994}
+    m_Target: {x: -17.435246, y: -7.2175493, z: -7.508703}
     speed: 2
-    m_Value: {x: -13.061281, y: -8.6070175, z: -8.031994}
+    m_Value: {x: -17.435246, y: -7.2175493, z: -7.508703}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -533,13 +533,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.14531897, y: 0.8166121, z: -0.23394445, w: 0.5073193}
+    m_Target: {x: -0.1402063, y: -0.77957785, z: 0.18838228, w: -0.5809455}
     speed: 2
-    m_Value: {x: 0.1456642, y: 0.8158193, z: -0.23371734, w: 0.50852436}
+    m_Value: {x: -0.13961366, y: -0.78116685, z: 0.18876573, w: -0.5784928}
   m_Size:
-    m_Target: 10.644121
+    m_Target: 5.0967345
     speed: 2
-    m_Value: 10.185761
+    m_Value: 4.7967343
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -557,7 +557,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08536034, y: 0.7865112, z: 0.1116403, w: 0.6013861}
+  m_LastSceneViewRotation: {x: 0.01809017, y: 0.98166937, z: -0.14535517, w: 0.12224934}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -629,20 +629,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Maze
+    - Assets/Shaders/Level 4 - Maze
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Models/Maze
+  - Assets/Shaders/Level 4 - Maze
   m_LastFoldersGridSize: 65
   m_LastProjectPath: D:\Github\CT4105-Escape-Room\CT4105 Escape Room Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 28}
-    m_SelectedIDs: 283a0000
-    m_LastClickedID: 14888
-    m_ExpandedIDs: 00000000f6390000f8390000fa390000fc390000fe390000123a000000ca9a3b
+    m_SelectedIDs: 363c0000
+    m_LastClickedID: 15414
+    m_ExpandedIDs: 00000000043a0000063a0000083a00000a3a00000c3a0000323a00003e3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -670,7 +670,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6390000f8390000fa390000fc390000fe390000
+    m_ExpandedIDs: 00000000043a0000063a0000083a00000a3a00000c3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
