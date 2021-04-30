@@ -95,7 +95,7 @@ public class ObjectTrigger : MonoBehaviour
                                 switch( _om._currentAction )
                                 {
 
-                                    case "Look_At":
+                                    case "LookAt":
 
                                         _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._lookAtMessage, gameObject.GetComponent<ObjectMeta>()._lookAtMessageWaitTime );
 

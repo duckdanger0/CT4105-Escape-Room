@@ -27,7 +27,9 @@ public class MessageManager : MonoBehaviour
     public void showMessage( string message, float wait )
     {
 
-        _om._messageBox.GetComponent<TextMeshProUGUI>().text =  message ;
+        print(message);
+
+        _om._messageBox.GetComponent<TextMeshProUGUI>().text = message ;
 
         if( _messageReset != null )
          {
