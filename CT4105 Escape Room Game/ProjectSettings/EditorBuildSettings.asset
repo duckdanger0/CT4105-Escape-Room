@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TiltLevel.unity
     guid: 669208b3b8f4cf54e8249a2dfd5f1112
+  - enabled: 1
+    path: Assets/simonSays/SimonSays.unity
+    guid: 0d9e985794f07bb43817de8c90791603
   m_configObjects: {}
