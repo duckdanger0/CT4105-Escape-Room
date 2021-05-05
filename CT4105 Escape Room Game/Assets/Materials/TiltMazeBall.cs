@@ -23,7 +23,7 @@ public class TiltMazeBall : MonoBehaviour
     {
         if( collision.gameObject.name == targetToHit.name )
         {
-
+            GlobalControl.Instance.score = +100;
             GameObject.Find("TiltMazeManager").GetComponent<TiltMazeManager>().complete = true;
 
         }

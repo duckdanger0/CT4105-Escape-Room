@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class LockControl : MonoBehaviour
 {
@@ -40,6 +42,7 @@ public class LockControl : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
             isOpened = true;
+            SceneManager.LoadScene("coolandgood");
         }
     }
 

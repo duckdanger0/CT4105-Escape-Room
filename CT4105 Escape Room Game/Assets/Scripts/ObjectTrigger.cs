@@ -30,6 +30,7 @@ public class ObjectTrigger : MonoBehaviour
     public bool _open;
     public bool _close;
     public bool _investigate;
+    public bool TheEnd;
 
     private GameObject _mc;
     private ObjectsManager _om;
@@ -169,6 +170,16 @@ public class ObjectTrigger : MonoBehaviour
                                     break;
 
                                     case "Investigate":
+                                        
+                                        if (TheEnd)
+                                        {
+                                            if (GlobalControl.Instance.score != 300)
+                                            {
+                                                _mm.showMessage(gameObject.GetComponent<ObjectMeta>()._investigateMessageEndNotEnoughPoints, gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime);
+                                                break;
+                                            }
+                                            
+                                        }
 
                                         _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._investigateMessage, gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime );
 
@@ -243,7 +254,7 @@ public class ObjectTrigger : MonoBehaviour
                                     break;
 
                                     case "Investigate":
-
+                          
                                         _mm.showMessage( gameObject.GetComponent<ObjectMeta>()._investigateMessage, gameObject.GetComponent<ObjectMeta>()._investigateMessageWaitTime );
 
                                         if( _mc.GetComponent<FadeToOrFromBlack>() == null )
@@ -358,6 +369,20 @@ public class ObjectTrigger : MonoBehaviour
         _om.hideActions();
 
         _om.disableActions( null );
+
+        // Save player position
+
+        GameObject player = GameObject.Find("Player");
+        GlobalControl.Instance.posx = player.transform.position.x;
+        GlobalControl.Instance.posy = player.transform.position.y;
+        GlobalControl.Instance.posz = player.transform.position.z;
+        GlobalControl.Instance.roty = player.transform.localRotation.eulerAngles.y;
+
+        if (TheEnd)
+        {
+            GameObject brain = GameObject.Find("theallknowingcube");
+            Destroy(brain);
+        }
 
         yield return new WaitForSeconds( waitTime );
 

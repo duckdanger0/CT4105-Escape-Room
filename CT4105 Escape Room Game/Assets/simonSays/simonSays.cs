@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class simonSays : MonoBehaviour
@@ -135,6 +136,8 @@ public class simonSays : MonoBehaviour
         gameOver = true;
         Debug.Log("you win!");
         speaker.PlayOneShot(win_sound, 2f);
+        GlobalControl.Instance.score += 100;
+        SceneManager.LoadScene("Floor 2 - Arcade");
     }
 
     void loose()

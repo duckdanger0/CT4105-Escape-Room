@@ -237,6 +237,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -268,6 +269,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &24897702
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +385,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -414,6 +417,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &26707712
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +614,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -641,6 +646,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &41978379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +672,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &41978380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +692,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -806,6 +814,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -837,6 +846,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &44852779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,6 +5923,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879287655}
   m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100003341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 100003343}
+  - component: {fileID: 100003342}
+  m_Layer: 0
+  m_Name: theallknowingcube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &100003342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100003341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a69900d0e64ae44a36d4bf6e0b7fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  posx: 0
+  posy: 0
+  posz: 0
+  roty: 0
+--- !u!4 &100003343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100003341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.27303, y: 0.3077774, z: 10.814236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112255742
 GameObject:
@@ -11010,6 +11068,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -11041,6 +11100,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &183593711
 GameObject:
   m_ObjectHideFlags: 0
@@ -11376,6 +11436,7 @@ MonoBehaviour:
   _open: 1
   _close: 1
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &183593717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11395,6 +11456,7 @@ MonoBehaviour:
   _closeMessage: The cupboard is closed
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -11617,6 +11679,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -11648,6 +11711,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &230825683
 GameObject:
   m_ObjectHideFlags: 0
@@ -11842,6 +11906,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -11873,6 +11938,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!1 &307414220
 GameObject:
   m_ObjectHideFlags: 0
@@ -12228,6 +12294,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -12259,13 +12326,14 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!43 &314414472
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15522
+  m_Name: pb_Mesh57592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12428,7 +12496,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15266
+  m_Name: pb_Mesh57316
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13557,6 +13625,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -13588,13 +13657,14 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!43 &465484680
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14718
+  m_Name: pb_Mesh56700
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13866,6 +13936,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -13897,6 +13968,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!1 &477410230
 GameObject:
   m_ObjectHideFlags: 0
@@ -14322,6 +14394,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -14353,6 +14426,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &482487394
 GameObject:
   m_ObjectHideFlags: 0
@@ -14468,6 +14542,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -14499,6 +14574,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &497867195
 GameObject:
   m_ObjectHideFlags: 0
@@ -15197,7 +15273,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15728
+  m_Name: pb_Mesh57822
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15469,6 +15545,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -15500,6 +15577,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!1 &577799600
 GameObject:
   m_ObjectHideFlags: 0
@@ -15602,6 +15680,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: Ooh let's have a game !
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -15633,6 +15712,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!64 &577799606
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20838,6 +20918,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -20869,6 +20950,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &704474549
 GameObject:
   m_ObjectHideFlags: 0
@@ -21318,6 +21400,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -21349,6 +21432,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &795692737
 GameObject:
   m_ObjectHideFlags: 0
@@ -21711,6 +21795,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -21742,13 +21827,14 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!43 &830453099
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14624
+  m_Name: pb_Mesh56594
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21990,7 +22076,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14866
+  m_Name: pb_Mesh56876
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22153,7 +22239,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15384
+  m_Name: pb_Mesh57454
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22425,6 +22511,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -22456,6 +22543,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &944127253
 GameObject:
   m_ObjectHideFlags: 0
@@ -23652,6 +23740,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -23683,6 +23772,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &1064787898
 GameObject:
   m_ObjectHideFlags: 0
@@ -28552,6 +28642,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -28583,13 +28674,14 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!43 &1068950272
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15496
+  m_Name: pb_Mesh57566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33697,6 +33789,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -33728,6 +33821,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!33 &1268298513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -33981,6 +34075,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -34012,6 +34107,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &1287477613
 GameObject:
   m_ObjectHideFlags: 0
@@ -39202,7 +39298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14932
+  m_Name: pb_Mesh56948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39470,7 +39566,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14602
+  m_Name: pb_Mesh56572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39872,6 +39968,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -39903,6 +40000,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!1 &1409274733
 GameObject:
   m_ObjectHideFlags: 0
@@ -40219,7 +40317,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14738
+  m_Name: pb_Mesh56720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40621,6 +40719,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -40652,6 +40751,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &1532666356
 GameObject:
   m_ObjectHideFlags: 0
@@ -40846,6 +40946,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -40877,6 +40978,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!1 &1559838525
 GameObject:
   m_ObjectHideFlags: 0
@@ -41296,7 +41398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15432
+  m_Name: pb_Mesh57502
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56372,7 +56474,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15444
+  m_Name: pb_Mesh57514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61404,6 +61506,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!114 &1706862229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61423,6 +61526,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: Lets see what games are on here !
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -66298,6 +66402,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -66329,13 +66434,14 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!43 &1750453946
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15626
+  m_Name: pb_Mesh57708
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -66607,6 +66713,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -66638,6 +66745,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &1810440301
 GameObject:
   m_ObjectHideFlags: 0
@@ -71586,7 +71694,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15134
+  m_Name: pb_Mesh57174
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -72255,6 +72363,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -72286,6 +72395,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &1888042974
 GameObject:
   m_ObjectHideFlags: 0
@@ -77125,7 +77235,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15668
+  m_Name: pb_Mesh57750
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -82496,6 +82606,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &2037582923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82515,6 +82626,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -82636,6 +82748,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -82667,6 +82780,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &2044054784
 GameObject:
   m_ObjectHideFlags: 0
@@ -82718,7 +82832,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15456
+  m_Name: pb_Mesh57526
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -82990,6 +83104,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -83021,6 +83136,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &2106561801
 GameObject:
   m_ObjectHideFlags: 0
@@ -88037,6 +88153,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &2122316564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88056,6 +88173,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -88147,7 +88265,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15576
+  m_Name: pb_Mesh57654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -88610,6 +88728,9 @@ GameObject:
   - component: {fileID: 543450651668643908}
   - component: {fileID: 3469287837665660897}
   - component: {fileID: 1711813854947048235}
+  - component: {fileID: 919132147998677760}
+  - component: {fileID: 919132147998677759}
+  - component: {fileID: 919132147998677761}
   m_Layer: 0
   m_Name: DoubleDoor (2)
   m_TagString: Untagged
@@ -88617,6 +88738,72 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132147998677759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147998677758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471b0a29e44c14a49a786b4b996a27ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lookAtMessage: This door is locked
+  _lookAtMessageWaitTime: 2
+  _openMessage: 
+  _openMessageWaitTime: 2
+  _closeMessage: 
+  _closeMessageWaitTime: 2
+  _investigateMessage: Finally I have escaped this room
+  _investigateMessageEndNotEnoughPoints: fuck
+  _investigateMessageWaitTime: 2
+  _fadeSceneOut: 1
+  _fadeSceneOutSpeed: 1
+  _waitTimeBeforeFadeStart: 2
+  _waitTimeAfterFadeEnds: 1
+  _nameOfNextSceneToGoTo: 
+--- !u!114 &919132147998677760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147998677758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635e069d219b334419bf26d78dfede90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectAnimator: {fileID: 0}
+  _objectAnimatorActivateParameterName: Open
+  _objectAnimatorDeactivateParameterName: Close
+  _activated: 0
+  _requiredGameObjectToTrigger: {fileID: 0}
+  _requiredGameObjectMessage: 
+  _requiredGameObjectMessageWaitTime: 2
+  _newLookAtMessageAfterActivated: 
+  _newLookAtMessageWaittimeAfterActivated: 2
+  _lookAt: 1
+  _open: 0
+  _close: 0
+  _investigate: 1
+  TheEnd: 1
+--- !u!64 &919132147998677761
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147998677758}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5060444177187149915, guid: 10765e357b10b434084d7daff9fbf9cb, type: 3}
 --- !u!1 &919132148053880282
 GameObject:
   m_ObjectHideFlags: 0
@@ -88662,6 +88849,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &919132148053880284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88681,6 +88869,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -88783,6 +88972,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &919132148506154695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88802,6 +88992,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -88920,6 +89111,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: Lets see what games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 4
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -88951,6 +89143,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!1 &919132149370197767
 GameObject:
   m_ObjectHideFlags: 0
@@ -89106,6 +89299,7 @@ MonoBehaviour:
   _open: 1
   _close: 1
   _investigate: 0
+  TheEnd: 0
 --- !u!64 &1569843936360578276
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -89158,6 +89352,7 @@ MonoBehaviour:
   _closeMessage: The door is closed
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -90241,6 +90436,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: What games are on here
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -90272,6 +90468,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 1
+  TheEnd: 0
 --- !u!33 &4925856925071873513
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90425,6 +90622,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -90456,6 +90654,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!33 &6067047328380796431
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90571,6 +90770,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!114 &6598260614752466315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90590,6 +90790,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -90785,6 +90986,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!95 &7554348979746630419
 Animator:
   serializedVersion: 3
@@ -90823,6 +91025,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -91286,7 +91489,7 @@ MonoBehaviour:
   - _cameraLocation: {fileID: 6598260614752466312}
   - _cameraLocation: {fileID: 41978372}
   - _cameraLocation: {fileID: 2122316558}
-  - _cameraLocation: {fileID: 0}
+  - _cameraLocation: {fileID: 919132147998677758}
   - _cameraLocation: {fileID: 0}
   - _cameraLocation: {fileID: 0}
   - _cameraLocation: {fileID: 0}
@@ -91645,6 +91848,7 @@ GameObject:
   - component: {fileID: 7817908266621552001}
   - component: {fileID: 7817908266621552000}
   - component: {fileID: 7817908266621552003}
+  - component: {fileID: 7817908266621552014}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -91667,6 +91871,18 @@ Transform:
   m_Father: {fileID: 8391022718288591256}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 196.107, z: 0}
+--- !u!114 &7817908266621552014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817908266621552012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c23f40299619674f9e55321578b49b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7817908266865837060
 Transform:
   m_ObjectHideFlags: 0
@@ -91950,7 +92166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4286215606373354775}
   m_LocalRotation: {x: -0, y: -0.06530283, z: -0, w: 0.9978655}
-  m_LocalPosition: {x: 12.526589, y: -0.54, z: 7.661397}
+  m_LocalPosition: {x: 12.526589, y: 0, z: 7.661397}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 7817908265608429550}
@@ -92016,6 +92232,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -92047,6 +92264,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!64 &8560592953122878930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -92115,6 +92333,7 @@ MonoBehaviour:
   _closeMessage: 
   _closeMessageWaitTime: 2
   _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
   _investigateMessageWaitTime: 2
   _fadeSceneOut: 1
   _fadeSceneOutSpeed: 1
@@ -92146,6 +92365,7 @@ MonoBehaviour:
   _open: 0
   _close: 0
   _investigate: 0
+  TheEnd: 0
 --- !u!4 &8642002617071960547
 Transform:
   m_ObjectHideFlags: 0

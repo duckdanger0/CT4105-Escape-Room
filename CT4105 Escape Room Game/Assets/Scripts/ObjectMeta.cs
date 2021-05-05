@@ -19,6 +19,7 @@ public class ObjectMeta : MonoBehaviour
 
     [Header("Investigate object properties")]
     public string _investigateMessage;
+    public string _investigateMessageEndNotEnoughPoints;
     public float _investigateMessageWaitTime = 2f;
 
     [Header("After Investigating an object do you want to fade out to the new scene?")]

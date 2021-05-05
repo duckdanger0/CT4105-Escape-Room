@@ -28,6 +28,7 @@ public class Switch : MonoBehaviour
             down.SetActive(true);
             off.SetActive(true);
         }
+
     }
     void OnMouseDown()
     {
