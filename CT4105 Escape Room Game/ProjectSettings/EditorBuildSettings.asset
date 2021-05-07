@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/simonSays/SimonSays.unity
     guid: 0d9e985794f07bb43817de8c90791603
+  - enabled: 1
+    path: Assets/LightSwitch/LightSwitch.unity
+    guid: d985b1200c7e84a48867d5d9f44af229
+  - enabled: 1
+    path: Assets/Scenes/Padlock.unity
+    guid: 1464c6878f4e1b040a7a06202bae3c1e
   m_configObjects: {}

@@ -137,7 +137,7 @@ public class simonSays : MonoBehaviour
         Debug.Log("you win!");
         speaker.PlayOneShot(win_sound, 2f);
         GlobalControl.Instance.score += 100;
-        SceneManager.LoadScene("Floor 2 - Arcade");
+        returnBack();
     }
 
     void loose()
@@ -145,6 +145,7 @@ public class simonSays : MonoBehaviour
         gameOver = true;
         Debug.Log("You Loose :(");
         speaker.PlayOneShot(loose_sound, volume);
+        returnBack();
     }
 
     void displaySequence()
@@ -161,9 +162,10 @@ public class simonSays : MonoBehaviour
         }
     }
 
-    IEnumerator sleep()
+    IEnumerator returnBack()
     {
         yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Floor 2 - Arcade");
     }
 
     void generateSequence()

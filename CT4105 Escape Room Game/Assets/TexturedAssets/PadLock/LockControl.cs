@@ -11,7 +11,7 @@ public class LockControl : MonoBehaviour
     private void Start()
     {
         result = new int[]{0,0,0,0};
-        correctCombination = new int[] {4,2,0,4};
+        correctCombination = new int[] {4,2,0,9};
         isOpened = false;
         Rotate.Rotated += CheckResults;
     }
