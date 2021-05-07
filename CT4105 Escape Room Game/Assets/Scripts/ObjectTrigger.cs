@@ -371,7 +371,6 @@ public class ObjectTrigger : MonoBehaviour
         _om.disableActions( null );
 
         // Save player position
-        Debug.Log("yeye ass nigga");
         GameObject player = GameObject.Find("Player");
         Debug.Log(player);
         GlobalControl.Instance.posx = player.transform.position.x;

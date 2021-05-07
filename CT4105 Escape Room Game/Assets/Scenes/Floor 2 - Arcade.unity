@@ -40686,7 +40686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1535122371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91663,7 +91663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 258, y: -129}
+  m_AnchoredPosition: {x: 258, y: -128.99997}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7817908265945664438
@@ -91739,6 +91739,7 @@ GameObject:
   - component: {fileID: 7817908266214954711}
   - component: {fileID: 7817908266214954709}
   - component: {fileID: 7817908266214954708}
+  - component: {fileID: 7817908266214954714}
   - component: {fileID: 7817908266214954705}
   - component: {fileID: 7817908266214954713}
   m_Layer: 0
@@ -91971,6 +91972,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7817908266214954714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7817908266214954707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ceb75528e396994d9208b1ec2fc4537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeToBlack: 0
+  _blackOutSquare: {fileID: 1535122370}
+  fadeSceneIn: 1
+  fadeSceneInSpeed: 0.5
 --- !u!114 &7817908266510449412
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -109,7 +109,13 @@ public class FadeToOrFromBlack : MonoBehaviour
 
             if( nextSceneToLoad != null )
             {
-
+                // Save player position
+                GameObject player = GameObject.Find("Player");
+                Debug.Log(player);
+                GlobalControl.Instance.posx = player.transform.position.x;
+                GlobalControl.Instance.posy = player.transform.position.y;
+                GlobalControl.Instance.posz = player.transform.position.z;
+                GlobalControl.Instance.roty = player.transform.localRotation.eulerAngles.y;
                 SceneManager.LoadScene( nextSceneToLoad );
 
             }
