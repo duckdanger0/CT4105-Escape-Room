@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Padlock.unity
     guid: 1464c6878f4e1b040a7a06202bae3c1e
+  - enabled: 1
+    path: Assets/Scenes/0. SplashScreen.unity
+    guid: 7e038ca9243308e47a9bd2eb04b7f994
+  - enabled: 1
+    path: Assets/Scenes/1. Title.unity
+    guid: b3e3bcd0802c2e24d90c8cbf2b0dc2b1
   m_configObjects: {}

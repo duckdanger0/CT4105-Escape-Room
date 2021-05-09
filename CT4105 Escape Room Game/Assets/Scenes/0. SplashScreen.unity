@@ -506,8 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34f242c9a9477e40a9db61e6dd101ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newLevel: Floor 4 - Maze
-  timer: 6
+  newLevel: 1. Title
+  timer: 8
 --- !u!1 &2139581638
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0.594
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
