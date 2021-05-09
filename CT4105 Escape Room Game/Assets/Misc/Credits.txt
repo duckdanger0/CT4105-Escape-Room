@@ -7,7 +7,15 @@ Karl Casey @ White Bat Audio:
 Hackers
 The Body
 Halloween FX Productions - Robotic Screams
+Roger Lee - Dont Go
+
+Audio Used:
+Blastwave FX - Robotic Walk
+jamesrodavidson - Monster footsteps sound effect
+
+
 
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)
 *Include UoG and NMS logo*
+*Trapped Logo*
