@@ -14,7 +14,7 @@ public class ObjectTrigger : MonoBehaviour
     public string _objectAnimatorActivateParameterName = "Open";
     public string _objectAnimatorDeactivateParameterName = "Close";
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool _activated = false;
 
     [Header("Does the object require another object to trigger the animation?")]  
