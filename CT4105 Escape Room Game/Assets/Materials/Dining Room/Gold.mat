@@ -113,7 +113,7 @@ Material:
     - _IntensityMask: 1
     - _InvertABaseColor: 0
     - _InvertMask: 0
-    - _Metallic: 0.938
+    - _Metallic: 0.886
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
