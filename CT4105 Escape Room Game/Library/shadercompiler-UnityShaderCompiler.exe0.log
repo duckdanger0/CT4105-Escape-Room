@@ -1,5 +1,6 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Cmd: preprocess
   insize=7883 outsize=2542 ok=1
 Cmd: preprocess
@@ -52,3 +53,5 @@ Cmd: preprocess
   insize=69436 outsize=3829 ok=1
 Cmd: preprocess
   insize=64469 outsize=3676 ok=1
+=======
+>>>>>>> parent of 0c3fb88 (Animations)
