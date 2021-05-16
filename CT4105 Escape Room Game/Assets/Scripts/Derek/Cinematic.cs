@@ -79,4 +79,8 @@ public class Cinematic : MonoBehaviour {
     {
         return (nodes[segment].rotation);
     }
+
+    public Vector3 SegmentGap(int segment1, int segment2){
+        return nodes[segment2].position - nodes[segment1].position;
+    }
 }
