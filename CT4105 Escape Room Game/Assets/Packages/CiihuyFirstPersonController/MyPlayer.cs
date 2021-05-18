@@ -6,7 +6,7 @@ using UnityEngine;
 public class MyPlayer : MonoBehaviour {
 	public float speed;
 	public MyJoystick joystick;
-	
+
 	void FixedUpdate () {
 		//Vector3 movement = new Vector3 (joystick.Horizontal () * Time.deltaTime, 0.0f, joystick.Vertical() * Time.deltaTime);
 		//rb.AddForce (movement * speed);

@@ -7,6 +7,7 @@ TagManager:
   - Action
   - Looking
   - Jaakko
+  - Sound
   layers:
   - Default
   - TransparentFX
