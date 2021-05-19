@@ -33312,7 +33312,7 @@ MonoBehaviour:
   _lookAt: 1
   _open: 0
   _close: 0
-  _investigate: 1
+  _investigate: 0
   TheEnd: 0
 --- !u!114 &6869129819555184427
 MonoBehaviour:
