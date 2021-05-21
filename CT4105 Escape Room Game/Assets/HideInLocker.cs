@@ -10,12 +10,16 @@ public class HideInLocker : MonoBehaviour
     private GameObject player;
 
     void OnTriggerEnter(Collider other){
-        hideBtn.SetActive(true);
-        player.GetComponent<Hiding>().locker = gameObject;
+        if (other.tag == "Player"){
+            hideBtn.SetActive(true);
+            player.GetComponent<Hiding>().locker = gameObject;
+        }
     }
 
     void OnTriggerExit(Collider other){
-        hideBtn.SetActive(false);
-        player.GetComponent<Hiding>().derekActivated = false;
+        if (other.tag == "Player"){
+            hideBtn.SetActive(false);
+            player.GetComponent<Hiding>().derekActivated = false;
+        }
     }
 }

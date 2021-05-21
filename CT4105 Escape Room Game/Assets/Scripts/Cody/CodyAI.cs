@@ -5,88 +5,154 @@ using UnityEngine.AI;
 
 public class CodyAI : MonoBehaviour
 {
+    [SerializeField]
+    private Cinematic rail;
+    [SerializeField]
+    private Animator codyAnim;
+
+    public GameObject soundSource;
+
+    private int currentSegment = 1;
+    private float transition;
+    private bool isCompleted;
+
+    public PlayMode mode;
+    public float speed = .5f;
+    public bool isReversed;
+    public bool isLooping;
+    public bool isToAndFro;
+
+    float timer, cooldownTimer;
+    bool timerActive, coolDownActive, movementEnabled;
+    public bool isAttracted, isConfused;
 
     public NavMeshAgent agent;
 
-    public Transform player;
+    [SerializeField]
+    float extraRotationSpeed;
 
-    public LayerMask whatIsGround, whatIsPlayer;
-
-    //Patroling
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
-
-    //States
-
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
-
-    private void Awake()
-    {
-        player = GameObject.Find("Player").transform;
-        agent = GetComponent<NavMeshAgent>();
-
+    void Start(){
+        timer = .5f;
+        cooldownTimer = .5f;
+        timerActive = true;
+        movementEnabled = true;
+        coolDownActive = false;
     }
 
-    private void Update()
-    {
-        RaycastHit hit;
-        //Check for sight and attack range
-        if (Physics.CapsuleCast(transform.position, player.position, 1, transform.forward, out hit, 20)){
-            if (hit.collider.tag == "Player"){
-                playerInSightRange = true;
-            }
-            else{
-                playerInSightRange = false;
-            }
+    private void Update() {
+        if (!rail) {
+            return;
         }
-        playerInAttackRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (!isCompleted && !isAttracted && !isConfused) {
+            agent.isStopped = true;
+            agent.Warp(gameObject.transform.position);
+            Play(!isReversed);
+        }
+        if (isAttracted){
+            TowardSound(soundSource);
+            extraRotation();
+        }
 
-        Debug.Log(playerInSightRange);
-
-        //if (!playerInSightRange && !playerInAttackRange) Patroling();
-        //if (playerInSightRange && !playerInAttackRange) Chasing();
-        //if (playerInSightRange && playerInAttackRange) Attacking();
     }
 
+    private void Play(bool forward = true) {
+        if (movementEnabled){
+            float magnitude = (rail.nodes[currentSegment + 1].position - rail.nodes[currentSegment].position).magnitude;
+            float cameraSpeed = (Time.deltaTime * 1 / magnitude) * speed;
+            transition += (forward) ? cameraSpeed : -cameraSpeed;
 
+            if (transition > 1) {
+                transition = 0;
+                currentSegment++;
 
-    // public void Patroling()
-    // {
+                if (currentSegment == rail.nodes.Length - 1) {
+                    if (isLooping) {
+                        if (isToAndFro) {
+                            transition = 1;
+                            currentSegment = rail.nodes.Length - 2;
+                            isReversed = !isReversed;
+                        }
+                        currentSegment = 1;
+                    }
+                    else {
+                        isCompleted = true;
+                        return;
+                    }
+                }
+            }
+            else if (transition < 0) {
+                transition = 1;
+                currentSegment--;
 
-    //     if (!walkPointSet) SearchWalkPoint();
+                if (currentSegment == -1) {
 
-    //     if (walkPointSet)
-    //         agent.SetDestination(walkPoint);
+                    if (isLooping) {
 
-    //     Vector3 distanceToWalkPoint = transform.position - walkPoint;
+                        if (isToAndFro) {
+                            transition = 1;
+                            currentSegment = 1;
+                            isReversed = !isReversed;
+                        }
+                        currentSegment = rail.nodes.Length - 2;
+                    }
+                    else {
+                        isCompleted = true;
+                        return;
+                    }
+                }
+            }
+            transform.position = rail.PosOnRail(currentSegment, transition, mode);
+        }
 
-    //     //walkpoint reached
-    //     if (distanceToWalkPoint.magnitude < 1f)
-    //         walkPointSet = false;
+        if (timerActive){
+            timer -= Time.deltaTime;
+        }
 
-    // }
+        if (coolDownActive){
+            cooldownTimer -= Time.deltaTime;
+        }
 
-    // private void SearchWalkPoint()
-    // {
-    //     //Calculate random point in range
-    //     float randomZ = Random.Range(-walkPointRange, walkPointRange);
-    //     float randomX = Random.Range(-walkPointRange, walkPointRange);
+        if (cooldownTimer <= 0f){
+            cooldownTimer = 0.5f;
+            coolDownActive = false;
+            timerActive = true;
+            movementEnabled = true;
+        }
 
-    //     walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        if (timer <= 0){
+            timer = .5f;
+            timerActive = false;
+            coolDownActive = true;
+            movementEnabled = false;
+        }
 
-    //     if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-    //         walkPointSet = true;
-    // }
+        transform.rotation = Quaternion.Lerp(transform.rotation, rail.CurrentSegmentAngle(currentSegment), Time.deltaTime * 5f);
 
-    public void Chasing()
-    {
-        agent.SetDestination(player.position);
     }
 
-    public void Attacking()
+    public void TowardSound(GameObject sound){
+        agent.isStopped = false;
+        agent.SetDestination(sound.transform.position);
+        
+    }
+     
+    void extraRotation()
     {
-        Debug.Log("Boo");
+        Vector3 lookrotation = agent.steeringTarget-transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(lookrotation), extraRotationSpeed*Time.deltaTime);
+    }
+
+    public IEnumerator Confused(){
+        isAttracted = false;
+        isConfused = true;
+        agent.isStopped = true;
+        yield return new WaitForSeconds(6);
+        
+        agent.isStopped = false;
+        agent.SetDestination(rail.PosOnRail(currentSegment, transition, mode));
+
+        yield return new WaitForSeconds(10);
+        agent.isStopped = true;
+        isConfused = false;
     }
 }
