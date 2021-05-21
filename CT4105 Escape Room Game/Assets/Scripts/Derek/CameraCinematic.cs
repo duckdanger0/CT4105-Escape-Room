@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CameraCinematic : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class CameraCinematic : MonoBehaviour {
     private Cinematic rail;
     [SerializeField]
     private Animator derekAnim;
+    [SerializeField]
+    private GameObject player;
 
     private int currentSegment = 1;
     private float transition;
@@ -21,6 +24,12 @@ public class CameraCinematic : MonoBehaviour {
 
     float timer, cooldownTimer;
     bool timerActive, coolDownActive, movementEnabled;
+    public bool isChasing, isConfused;
+
+    public NavMeshAgent agent;
+
+    [SerializeField]
+    float extraRotationSpeed;
 
     void Start(){
         timer = .5f;
@@ -36,8 +45,12 @@ public class CameraCinematic : MonoBehaviour {
         if (!rail) {
             return;
         }
-        if (!isCompleted) {
+        if (!isCompleted && !isChasing && !isConfused) {
             Play(!isReversed);
+        }
+        if (isChasing){
+            ChasePlayer();
+            extraRotation();
         }
 
     }
@@ -118,5 +131,37 @@ public class CameraCinematic : MonoBehaviour {
 
         transform.rotation = Quaternion.Lerp(transform.rotation, rail.CurrentSegmentAngle(currentSegment), Time.deltaTime * 5f);
 
+    }
+
+    public void ChasePlayer(){
+        agent.isStopped = false;
+        agent.SetDestination(player.transform.position);
+        
+    }
+     
+    void extraRotation()
+    {
+        Vector3 lookrotation = agent.steeringTarget-transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(lookrotation), extraRotationSpeed*Time.deltaTime);
+    }
+
+    public IEnumerator Confused(){
+        isConfused = true;
+        agent.isStopped = true;
+        gameObject.GetComponent<Animator>().SetBool("Chasing", false);
+        gameObject.GetComponent<Animator>().SetBool("Lost", true);
+        yield return new WaitForSeconds(6);
+        gameObject.GetComponent<Animator>().SetBool("Lost", false);
+        gameObject.GetComponent<Animator>().SetBool("Chasing", true);
+        agent.isStopped = false;
+        agent.SetDestination(rail.PosOnRail(currentSegment, transition, mode));
+        //gameObject.transform.position = rail.PosOnRail(currentSegment, transition, mode);
+        yield return new WaitForSeconds(5);
+        agent.isStopped = true;
+        isConfused = false;
+
+        gameObject.GetComponent<Animator>().SetBool("Caught", false);
+        gameObject.GetComponent<Animator>().SetBool("Chasing", false);
+        gameObject.GetComponent<Animator>().SetBool("Left", true);
     }
 }

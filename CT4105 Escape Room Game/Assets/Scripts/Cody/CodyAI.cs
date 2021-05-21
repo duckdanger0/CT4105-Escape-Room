@@ -82,9 +82,7 @@ public class CodyAI : MonoBehaviour
 
     public void Chasing()
     {
-
         agent.SetDestination(player.position);
-
     }
 
     public void Attacking()
