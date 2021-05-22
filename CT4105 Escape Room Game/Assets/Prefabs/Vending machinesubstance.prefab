@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5545858081114052501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5169296907552951599}
+  - component: {fileID: 8075749849715638922}
+  - component: {fileID: 6338294184233399872}
+  - component: {fileID: 5545858081114052488}
+  - component: {fileID: 5545858081114052503}
+  - component: {fileID: 5545858081114052502}
+  - component: {fileID: 5545858081114052489}
+  m_Layer: 0
+  m_Name: Vending machinesubstance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5169296907552951599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_LocalRotation: {x: -0.000000014901163, y: -0.000000089406974, z: -0.9597175, w: -0.28096688}
+  m_LocalPosition: {x: -5.734394, y: -29.814747, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90}
+--- !u!33 &8075749849715638922
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Mesh: {fileID: 5060444177187149915, guid: 5daf37b5d7bfd074583f7be20b678274, type: 3}
+--- !u!23 &6338294184233399872
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 18cfe9d20e340804db213add8f1844ce, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &5545858081114052488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635e069d219b334419bf26d78dfede90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectAnimator: {fileID: 0}
+  _objectAnimatorActivateParameterName: Open
+  _objectAnimatorDeactivateParameterName: Close
+  _activated: 0
+  _requiredGameObjectToTrigger: {fileID: 0}
+  _requiredGameObjectMessage: 
+  _requiredGameObjectMessageWaitTime: 2
+  _newLookAtMessageAfterActivated: 
+  _newLookAtMessageWaittimeAfterActivated: 2
+  _lookAt: 1
+  _open: 0
+  _close: 0
+  _investigate: 0
+  TheEnd: 0
+--- !u!114 &5545858081114052503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471b0a29e44c14a49a786b4b996a27ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lookAtMessage: Look at all these snacks !
+  _lookAtMessageWaitTime: 2
+  _openMessage: 
+  _openMessageWaitTime: 2
+  _closeMessage: 
+  _closeMessageWaitTime: 2
+  _investigateMessage: 
+  _investigateMessageEndNotEnoughPoints: 
+  _investigateMessageWaitTime: 2
+  _fadeSceneOut: 1
+  _fadeSceneOutSpeed: 1
+  _waitTimeBeforeFadeStart: 2
+  _waitTimeAfterFadeEnds: 1
+  _nameOfNextSceneToGoTo: 
+--- !u!64 &5545858081114052502
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5060444177187149915, guid: 5daf37b5d7bfd074583f7be20b678274, type: 3}
+--- !u!65 &5545858081114052489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545858081114052501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.82763773, y: 0.29892167, z: 1.2016834}
+  m_Center: {x: -0.0003552523, y: -0.022957388, z: 0.60084176}
