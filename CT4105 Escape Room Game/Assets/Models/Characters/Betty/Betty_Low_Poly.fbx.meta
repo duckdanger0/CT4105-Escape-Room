@@ -2,16 +2,8 @@ fileFormatVersion: 2
 guid: d8c0735fda445c74b9ef9b415c8229c8
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable:
-  - first:
-      74: 4743084820616853705
-    second: Armature|CameraAction
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Endo.001
-    second: {fileID: 2100000, guid: 088aed090229d1d4e89110c7313f1597, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
