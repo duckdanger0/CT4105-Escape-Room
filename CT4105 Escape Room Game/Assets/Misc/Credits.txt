@@ -6,6 +6,7 @@ Songs:
 Karl Casey @ White Bat Audio:
 Hackers
 The Body
+
 Halloween FX Productions - Robotic Screams
 Roger Lee - Dont Go
 
@@ -17,5 +18,6 @@ jamesrodavidson - Monster footsteps sound effect
 
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)
+Book Page Curl - Abdullah Aldandaraway
 *Include UoG and NMS logo*
 *Trapped Logo*
