@@ -16,6 +16,11 @@ public class CameraCinematic : MonoBehaviour {
     private float transition;
     private bool isCompleted;
 
+    public AudioSource DerekChase;
+    public AudioSource WalkLeft;
+    public AudioSource WalkRight;
+    public AudioSource running;
+
     public PlayMode mode;
     public float speed = .5f;
     public bool isReversed;
@@ -49,9 +54,10 @@ public class CameraCinematic : MonoBehaviour {
             Play(!isReversed);
         }
         if (isChasing){
-            ChasePlayer();
+            StartCoroutine(ChasePlayer());
             extraRotation();
         }
+
 
     }
 
@@ -133,10 +139,11 @@ public class CameraCinematic : MonoBehaviour {
 
     }
 
-    public void ChasePlayer(){
+    public IEnumerator ChasePlayer(){
+        yield return new WaitForSeconds(1); // just a random value for now, you can change this to what you want
         agent.isStopped = false;
         agent.SetDestination(player.transform.position);
-        
+        DerekChase.Play();
     }
      
     void extraRotation()

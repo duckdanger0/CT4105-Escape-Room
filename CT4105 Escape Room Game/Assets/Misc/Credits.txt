@@ -1,23 +1,30 @@
 Developers/Designers - Owen Morris & Danny Lee
-Code Debugging - Joshua Riches
+Code - Joshua Riches
 Character Art - Jordan Brayne
 
-Songs:
-Karl Casey @ White Bat Audio:
-Hackers
-The Body
-
-Halloween FX Productions - Robotic Screams
-Roger Lee - Dont Go
-
 Audio Used:
+Karl Casey @ White Bat Audio:
+-Hackers
+-The Body
+
+VidTrax Music - Circus Music
+
+David Fesliyan - Horror Chase
+
 Blastwave FX - Robotic Walk
 jamesrodavidson - Monster footsteps sound effect
+Halloween FX Productions - Robotic Screams
 
+Sounds from Zapsplat.com
+
+Special thanks to Reena Gibson and Julie Lee for
+remastering the song 'Dont Go' for this project
+love you both <3
 
 
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)
 Book Page Curl - Abdullah Aldandaraway
+
 *Include UoG and NMS logo*
 *Trapped Logo*

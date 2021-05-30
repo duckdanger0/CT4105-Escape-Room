@@ -14,6 +14,7 @@ public class Hiding : MonoBehaviour
         if (!isHiding){
             gameObject.transform.position = locker.transform.position;
             gameObject.transform.rotation = locker.transform.rotation;
+            gameObject.GetComponent<MyPlayer>().enabled = false;
             isHiding = true;
         }
         else{

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpinningRay : MonoBehaviour
 {
     private float xRotation = 3;
+    public AudioSource DerekChase;
 
     [SerializeField]
     private GameObject derek;
@@ -16,6 +17,7 @@ public class SpinningRay : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)){
             if (hit.collider.tag == "Player" && (transform.rotation.y < 90 || transform.rotation.y > 270) && derek.GetComponent<Animator>().GetBool("Chasing") == false){
                 derek.GetComponent<CameraCinematic>().isChasing = true;
+                DerekChase.Play();
                 derek.GetComponent<Animator>().SetBool("Caught", true);
                 StartCoroutine(DelayCaught());
                 derek.GetComponent<Animator>().SetBool("Chasing", true);
