@@ -14,7 +14,8 @@ public class SpinningRay : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity)){
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1000)){
+            Debug.Log("Hitting " + hit.collider.gameObject);
             if (hit.collider.tag == "Player" && (transform.rotation.y < 90 || transform.rotation.y > 270) && derek.GetComponent<Animator>().GetBool("Chasing") == false){
                 derek.GetComponent<CameraCinematic>().isChasing = true;
                 DerekChase.Play();

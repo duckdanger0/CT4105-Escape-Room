@@ -9,7 +9,7 @@ public class Rotate : MonoBehaviour
 
     private bool coroutineAllowed;
 
-    private int numberShown;
+    public int numberShown;
 
     private void Start()
     {

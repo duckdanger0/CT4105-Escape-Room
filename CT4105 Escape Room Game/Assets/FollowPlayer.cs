@@ -34,6 +34,8 @@ public class FollowPlayer : MonoBehaviour
             coolDownActive = false;
             timerActive = true;
             movementEnabled = true;
+            gameObject.GetComponent<Animator>().SetBool("Left", !gameObject.GetComponent<Animator>().GetBool("Left"));
+            gameObject.GetComponent<Animator>().SetBool("Right", !gameObject.GetComponent<Animator>().GetBool("Right"));
         }
 
         if (timer <= 0){

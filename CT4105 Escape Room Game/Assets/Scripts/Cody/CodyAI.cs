@@ -9,6 +9,9 @@ public class CodyAI : MonoBehaviour
     private Cinematic rail;
     [SerializeField]
     private Animator codyAnim;
+    [SerializeField]
+    private GameObject player;
+
 
     public GameObject soundSource;
 
@@ -24,12 +27,20 @@ public class CodyAI : MonoBehaviour
 
     float timer, cooldownTimer;
     bool timerActive, coolDownActive, movementEnabled;
-    public bool isAttracted, isConfused;
+    public bool isAttracted, isConfused, isChasing;
 
     public NavMeshAgent agent;
 
     [SerializeField]
     float extraRotationSpeed;
+
+    //Audio Sources
+    public AudioSource BKroaming;
+    public AudioSource Found;
+    public AudioSource Lost;
+    public AudioSource Hear;
+    public AudioSource Walk;
+
 
     void Start(){
         timer = .5f;
@@ -53,6 +64,17 @@ public class CodyAI : MonoBehaviour
         if (isAttracted){
             TowardSound(soundSource);
             extraRotation();
+        }
+
+        if (isChasing)
+        {
+            Found.Play();
+            agent.isStopped = false;
+            isAttracted = true;
+            codyAnim.SetBool("Run", true);
+            codyAnim.SetBool("Left", false);
+            codyAnim.SetBool("Right", false);
+            agent.SetDestination(player.transform.position);
         }
 
     }
@@ -114,21 +136,26 @@ public class CodyAI : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
         }
 
-        if (cooldownTimer <= 0f){
-            cooldownTimer = 0.5f;
-            coolDownActive = false;
-            timerActive = true;
-            movementEnabled = true;
+        if (cooldownTimer <= 0f)
+            {
+                cooldownTimer = 0.5f;
+                coolDownActive = false;
+                timerActive = true;
+                movementEnabled = true;
+                Walk.Play();    
 
-            codyAnim.SetBool("Left", !codyAnim.GetBool("Left"));
-            codyAnim.SetBool("Right", !codyAnim.GetBool("Right"));
-        }
+                codyAnim.SetBool("Left", !codyAnim.GetBool("Left"));
+                codyAnim.SetBool("Right", !codyAnim.GetBool("Right"));
+                
+            }
 
-        if (timer <= 0){
+
+            if (timer <= 0){
             timer = .5f;
             timerActive = false;
             coolDownActive = true;
             movementEnabled = false;
+
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, rail.CurrentSegmentAngle(currentSegment), Time.deltaTime * 5f);
@@ -140,7 +167,16 @@ public class CodyAI : MonoBehaviour
         agent.SetDestination(sound.transform.position);
         
     }
-     
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isChasing = true;
+        }
+
+    }
+
     void extraRotation()
     {
         Vector3 lookrotation = agent.steeringTarget-transform.position;

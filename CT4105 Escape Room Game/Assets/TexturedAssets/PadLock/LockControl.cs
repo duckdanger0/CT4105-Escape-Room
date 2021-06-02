@@ -8,46 +8,38 @@ public class LockControl : MonoBehaviour
 {
     private int[] result, correctCombination;
     private bool isOpened;
+
+    public GameObject wheel1, wheel2, wheel3, wheel4, betty;
+
     private void Start()
     {
         result = new int[]{0,0,0,0};
         correctCombination = new int[] {4,2,0,9};
         isOpened = false;
-        Rotate.Rotated += CheckResults;
     }
 
-    private void CheckResults(string wheelName, int number)
+    void Update(){
+        result[0] = wheel1.GetComponent<Rotate>().numberShown;
+        result[1] = wheel2.GetComponent<Rotate>().numberShown;
+        result[2] = wheel3.GetComponent<Rotate>().numberShown;
+        result[3] = wheel4.GetComponent<Rotate>().numberShown;
+    }
+
+    public void CheckResults()
     {
-        switch (wheelName)
-        {
-            case "WheelOne":
-                result[0] = number;
-                break;
-
-            case "WheelTwo":
-                result[1] = number;
-                break;
-
-            case "WheelThree":
-                result[2] = number;
-                break;
-
-            case "WheelFour":
-                result[3] = number;
-                break;
-        }
-
-        if (result[0] == correctCombination[0] && result[1] == correctCombination[1]
+            if (result[0] == correctCombination[0] && result[1] == correctCombination[1]
             && result[2] == correctCombination[2] && result[3] == correctCombination[3] && !isOpened)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
             isOpened = true;
-            SceneManager.LoadScene("coolandgood");
+
+            StartCoroutine(SwapScene());
         }
     }
 
-    private void OnDestroy()
-    {
-        Rotate.Rotated -= CheckResults;
+    private IEnumerator SwapScene(){
+        betty.SetActive(false);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(3);
     }
 }

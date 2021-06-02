@@ -2,6 +2,12 @@ Developers/Designers - Owen Morris & Danny Lee
 Code - Joshua Riches
 Character Art - Jordan Brayne
 
+Voices:
+
+Jaakko - Luke Burling
+Betty: Jordan Brayne
+
+
 Audio Used:
 Karl Casey @ White Bat Audio:
 -Hackers
@@ -11,11 +17,18 @@ VidTrax Music - Circus Music
 
 David Fesliyan - Horror Chase
 
+
+
+Sounds: 
+
+Zapsplat.com
+
+SoundEffectsFactory
+
 Blastwave FX - Robotic Walk
 jamesrodavidson - Monster footsteps sound effect
 Halloween FX Productions - Robotic Screams
 
-Sounds from Zapsplat.com
 
 Special thanks to Reena Gibson and Julie Lee for
 remastering the song 'Dont Go' for this project
