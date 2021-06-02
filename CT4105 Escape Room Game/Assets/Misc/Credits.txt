@@ -21,6 +21,7 @@ Special thanks to Reena Gibson and Julie Lee for
 remastering the song 'Dont Go' for this project
 love you both <3
 
+Planet textures from www.solarsystemscope.com
 
 Simple Input System - yasirkula
 First Person Controller - ThirteeNov (Ciihuy)

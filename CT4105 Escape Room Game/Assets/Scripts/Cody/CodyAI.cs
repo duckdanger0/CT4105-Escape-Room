@@ -37,6 +37,8 @@ public class CodyAI : MonoBehaviour
         timerActive = true;
         movementEnabled = true;
         coolDownActive = false;
+        codyAnim.SetBool("Left", false);
+        codyAnim.SetBool("Right", true);
     }
 
     private void Update() {
@@ -117,6 +119,9 @@ public class CodyAI : MonoBehaviour
             coolDownActive = false;
             timerActive = true;
             movementEnabled = true;
+
+            codyAnim.SetBool("Left", !codyAnim.GetBool("Left"));
+            codyAnim.SetBool("Right", !codyAnim.GetBool("Right"));
         }
 
         if (timer <= 0){

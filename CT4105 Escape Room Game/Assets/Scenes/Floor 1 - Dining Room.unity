@@ -3953,7 +3953,7 @@ Transform:
   - {fileID: 1091813846}
   - {fileID: 1851259954}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!1001 &165715464
 PrefabInstance:
@@ -5959,7 +5959,7 @@ Transform:
   - {fileID: 1776356050}
   - {fileID: 1183078397}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277754942
 GameObject:
@@ -6785,6 +6785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 320335179}
+  - component: {fileID: 320335180}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -6799,13 +6800,37 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320335178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.353148, y: 3.4360614, z: -10.561565}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7, y: 1.2918239, z: 1.6769454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1625773525}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &320335180
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320335178}
+  m_Enabled: 1
+  m_MinDistance: 72.87
+  m_MaxDistance: 73.09
+  m_ReverbPreset: 14
+  m_Room: -1000
+  m_RoomHF: -237
+  m_DecayTime: 2.7
+  m_DecayHFRatio: 0.79
+  m_Reflections: -1214
+  m_ReflectionsDelay: 0.013
+  m_Reverb: 395
+  m_ReverbDelay: 0.02
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1 &320939051
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,7 +10324,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52222
+  m_Name: pb_Mesh425492
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11844,7 +11869,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53784
+  m_Name: pb_Mesh427336
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17901,7 +17926,7 @@ Transform:
   - {fileID: 536762175}
   - {fileID: 769587469}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &749549821
 GameObject:
@@ -18068,7 +18093,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-49940
+  m_Name: pb_Mesh425090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21275,7 +21300,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52314
+  m_Name: pb_Mesh425592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25794,7 +25819,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53724
+  m_Name: pb_Mesh427280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32678,7 +32703,7 @@ PrefabInstance:
     - target: {fileID: 649685947924740803, guid: a194898633bb278479fedf1fafaf7eea,
         type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 649685947924740803, guid: a194898633bb278479fedf1fafaf7eea,
         type: 3}
@@ -34950,7 +34975,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53438
+  m_Name: pb_Mesh426930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39248,7 +39273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607112955
 GameObject:
@@ -39500,7 +39525,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52654
+  m_Name: pb_Mesh426000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -40006,6 +40031,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.12777919, y: 0.015975747, z: 0.03}
   m_Center: {x: -0.030843679, y: -0.00048788905, z: 0.015}
+--- !u!1 &1625773524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625773525}
+  m_Layer: 0
+  m_Name: Reverb Zones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1625773525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625773524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.92824, y: 2.1442375, z: -3.2269454}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 320335179}
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1628208826
 GameObject:
   m_ObjectHideFlags: 0
@@ -40274,7 +40330,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631300151}
   - component: {fileID: 1631300150}
-  - component: {fileID: 1631300152}
   m_Layer: 0
   m_Name: Stage Audio
   m_TagString: Untagged
@@ -40292,11 +40347,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: feb3e554cb75b584196507af910be84d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.491
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -40315,20 +40370,20 @@ AudioSource:
     - serializedVersion: 3
       time: 0.021298463
       value: 0.762249
-      inSlope: -0.6812684
-      outSlope: -0.6812684
+      inSlope: -1.2854196
+      outSlope: -1.2854196
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.12605603
+      outWeight: 0.08717733
     - serializedVersion: 3
       time: 0.99783325
       value: 0
-      inSlope: -1.0240171
-      outSlope: -1.0240171
+      inSlope: -0.5447648
+      outSlope: -0.5447648
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.06135727
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -40392,29 +40447,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!164 &1631300152
-AudioReverbFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631300149}
-  m_Enabled: 1
-  m_DryLevel: 0
-  m_Room: -1000
-  m_RoomHF: -237
-  m_DecayTime: 2.7
-  m_DecayHFRatio: 0.79
-  m_ReflectionsLevel: -1214
-  m_ReverbLevel: 395
-  m_ReverbDelay: 0.02
-  m_Diffusion: 100
-  m_Density: 100
-  m_HFReference: 5000
-  m_RoomLF: 0
-  m_LFReference: 250
-  m_ReflectionsDelay: 0
-  m_ReverbPreset: 14
 --- !u!1 &1632065213
 GameObject:
   m_ObjectHideFlags: 0
@@ -46351,7 +46383,7 @@ PrefabInstance:
     - target: {fileID: 649685947924740803, guid: a194898633bb278479fedf1fafaf7eea,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 649685947924740803, guid: a194898633bb278479fedf1fafaf7eea,
         type: 3}
@@ -47644,7 +47676,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52892
+  m_Name: pb_Mesh426294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49218,7 +49250,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh53848
+  m_Name: pb_Mesh427408
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -52525,7 +52557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh52562
+  m_Name: pb_Mesh425884
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61161,7 +61193,7 @@ Transform:
   - {fileID: 439795391}
   - {fileID: 854816641}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!4 &4469315807035720540
 Transform:
@@ -65069,7 +65101,7 @@ Transform:
   - {fileID: 4087644256736606091}
   - {fileID: 1083579728}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!23 &7141692740546956329
 MeshRenderer:
