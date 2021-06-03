@@ -12,6 +12,7 @@ public class SoundSource : MonoBehaviour
     public void PlaySound(){
         cody.GetComponent<CodyAI>().isAttracted = true;
         cody.GetComponent<CodyAI>().soundSource = gameObject;
+        Debug.Log("yes");
     }
 
     private void OnTriggerEnter(Collider other){
@@ -24,7 +25,8 @@ public class SoundSource : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other){
-        if (other.tag == "Player"){
+        if (other.tag == "Player")
+        {
             playBtn.SetActive(false);
         }
     }

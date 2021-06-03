@@ -12,6 +12,7 @@ public class CodyAI : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    Rigidbody m_Rigidbody;
 
     public GameObject soundSource;
 
@@ -36,13 +37,16 @@ public class CodyAI : MonoBehaviour
 
     //Audio Sources
     public AudioSource BKroaming;
-    public AudioSource Found;
     public AudioSource Lost;
+    public AudioSource Found;
     public AudioSource Hear;
     public AudioSource Walk;
 
 
-    void Start(){
+    void Start()
+    {
+        m_Rigidbody = GetComponent<Rigidbody>();
+
         timer = .5f;
         cooldownTimer = .5f;
         timerActive = true;
@@ -64,18 +68,20 @@ public class CodyAI : MonoBehaviour
         if (isAttracted){
             TowardSound(soundSource);
             extraRotation();
+             
         }
 
         if (isChasing)
         {
-            Found.Play();
             agent.isStopped = false;
             isAttracted = true;
+            Found.Play();
             codyAnim.SetBool("Run", true);
             codyAnim.SetBool("Left", false);
             codyAnim.SetBool("Right", false);
             agent.SetDestination(player.transform.position);
         }
+
 
     }
 
@@ -162,10 +168,10 @@ public class CodyAI : MonoBehaviour
 
     }
 
-    public void TowardSound(GameObject sound){
-        agent.isStopped = false;
-        agent.SetDestination(sound.transform.position);
-        
+    public void TowardSound(GameObject sound)
+    {
+        StartCoroutine(DelayCharge(sound));
+        return;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -173,6 +179,8 @@ public class CodyAI : MonoBehaviour
         if (other.tag == "Player")
         {
             isChasing = true;
+            isAttracted = false;
+            isConfused = false;
         }
 
     }
@@ -183,17 +191,45 @@ public class CodyAI : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(lookrotation), extraRotationSpeed*Time.deltaTime);
     }
 
-    public IEnumerator Confused(){
+    public IEnumerator Confused()
+    {
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        codyAnim.SetBool("Run", false);
+        agent.isStopped = true;
+        codyAnim.SetBool("Left", false);
+        codyAnim.SetBool("Right", false);
+        codyAnim.SetBool("Confused", true);
+        Lost.Play();
         isAttracted = false;
         isConfused = true;
-        agent.isStopped = true;
-        yield return new WaitForSeconds(6);
-        
+        yield return new WaitForSeconds(4);
+        m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        BKroaming.Play();
+        codyAnim.SetBool("Confused", false);
+        codyAnim.SetBool("Run", true);
         agent.isStopped = false;
         agent.SetDestination(rail.PosOnRail(currentSegment, transition, mode));
+        movementEnabled = false;
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(2);
         agent.isStopped = true;
+        codyAnim.SetBool("Run", false);
+        codyAnim.SetBool("Right", false);
+        codyAnim.SetBool("Left", true);
         isConfused = false;
     }
+
+    private IEnumerator DelayCharge(GameObject sound)
+    {
+        //Hear.Play();
+        codyAnim.SetBool("Left", false);
+        codyAnim.SetBool("Right", false);
+        codyAnim.SetBool("Hear", true);
+        agent.isStopped = false;
+        yield return new WaitForSeconds(1);
+        agent.SetDestination(sound.transform.position);
+        codyAnim.SetBool("Hear", false);
+        codyAnim.SetBool("Run", true);
+    }
+
 }

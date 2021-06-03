@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]
+    private Animator fadeAnim;
+    [SerializeField]
+    private GameObject fade;
+
+ 
 
     public string gotoThisScene;
 
@@ -17,5 +23,15 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void sceneChange()
+    {
+        Invoke("sceneChange2", 1);
+        fadeAnim.SetBool("W2B", true);
+    }
+
+    private void sceneChange2()
+    {
+        SceneManager.LoadScene(gotoThisScene);
+    }
 
 }

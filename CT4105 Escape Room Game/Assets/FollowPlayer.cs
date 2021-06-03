@@ -9,6 +9,8 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    public AudioSource Walk;
+
     bool movementEnabled, timerActive, coolDownActive;
     float timer, cooldownTimer;
 
@@ -34,8 +36,10 @@ public class FollowPlayer : MonoBehaviour
             coolDownActive = false;
             timerActive = true;
             movementEnabled = true;
+
             gameObject.GetComponent<Animator>().SetBool("Left", !gameObject.GetComponent<Animator>().GetBool("Left"));
             gameObject.GetComponent<Animator>().SetBool("Right", !gameObject.GetComponent<Animator>().GetBool("Right"));
+            Walk.Play();
         }
 
         if (timer <= 0){

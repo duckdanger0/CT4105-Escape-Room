@@ -8,8 +8,6 @@ public class Jumpscare : MonoBehaviour
     [SerializeField]
     private GameObject jumpscare;
     public AudioSource Audio;
-    [SerializeField]
-    private AudioSource chaseAudio;
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,7 +18,6 @@ public class Jumpscare : MonoBehaviour
     }
 
     private IEnumerator JumpScareAudio(){
-        chaseAudio.Stop();
         Audio.Play();
         jumpscare.SetActive(true);
         yield return new WaitForSeconds(2f);
