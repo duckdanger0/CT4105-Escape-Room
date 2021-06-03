@@ -38,4 +38,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Manual.unity
     guid: 7e06be2135e0de4458eb61a56076c2d0
+  - enabled: 1
+    path: Assets/Scenes/Game Over - Arcade.unity
+    guid: 0092abd1a6ee6064797ad4ac4094daf4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 9be95f31699a3e340898caf23950dabe
+  - enabled: 1
+    path: Assets/Scenes/Game Over - Maze.unity
+    guid: 62b57cc1e06b4ef488f7723f784a1775
+  - enabled: 1
+    path: Assets/Scenes/Game Over - SP.unity
+    guid: 1fe9155a961e5c549bcf707533c84e1d
   m_configObjects: {}

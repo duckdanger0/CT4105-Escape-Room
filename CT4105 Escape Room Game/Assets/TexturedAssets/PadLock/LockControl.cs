@@ -8,11 +8,13 @@ public class LockControl : MonoBehaviour
 {
     private int[] result, correctCombination;
     private bool isOpened;
+    DoorMaze Scene;
 
     public GameObject wheel1, wheel2, wheel3, wheel4, betty;
 
     private void Start()
     {
+        Scene = GameObject.Find("DoorTrigger").GetComponent<DoorMaze>();
         result = new int[]{0,0,0,0};
         correctCombination = new int[] {4,2,0,9};
         isOpened = false;
@@ -33,13 +35,14 @@ public class LockControl : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
             isOpened = true;
 
-            StartCoroutine(SwapScene());
+            Debug.Log("Open");
+            Scene.sceneChange();
         }
     }
 
-    private IEnumerator SwapScene(){
+    /*private IEnumerator SwapScene(){
         betty.SetActive(false);
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(3);
-    }
+    }*/
 }

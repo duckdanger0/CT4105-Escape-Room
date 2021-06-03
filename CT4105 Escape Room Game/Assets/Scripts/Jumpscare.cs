@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Jumpscare : MonoBehaviour
 {
     [SerializeField]
     private GameObject jumpscare;
     public AudioSource Audio;
+    public string gotoThisScene = "Game Over";
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,7 +21,8 @@ public class Jumpscare : MonoBehaviour
     private IEnumerator JumpScareAudio(){
         Audio.Play();
         jumpscare.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(gotoThisScene);
         Audio.Stop();
     }
 }

@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
 
     public void sceneChange()
     {
+        Debug.Log("change");
         Invoke("sceneChange2", 1);
         fadeAnim.SetBool("W2B", true);
     }
