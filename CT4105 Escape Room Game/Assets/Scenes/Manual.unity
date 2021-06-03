@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -650,7 +650,7 @@ RectTransform:
   m_GameObject: {fileID: 1931399934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -189.99998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2134, y: 1.2134, z: 1.2134}
   m_Children:
   - {fileID: 2049807533}
   m_Father: {fileID: 568171070}
@@ -689,7 +689,7 @@ RectTransform:
   m_GameObject: {fileID: 1982237271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0039186478}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2134, y: 1.2134, z: 1.2134}
   m_Children: []
   m_Father: {fileID: 568171070}
   m_RootOrder: 3
@@ -782,7 +782,7 @@ RectTransform:
   m_GameObject: {fileID: 2023168336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85172, y: 0.85172, z: 0.85172}
+  m_LocalScale: {x: 1.0334771, y: 1.0334771, z: 1.0334771}
   m_Children: []
   m_Father: {fileID: 568171070}
   m_RootOrder: 0
@@ -1179,15 +1179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.85172
+      value: 1.0334771
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.85172
+      value: 1.0334771
       objectReference: {fileID: 0}
     - target: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.85172
+      value: 1.0334771
       objectReference: {fileID: 0}
     - target: {fileID: 22488492, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: m_SizeDelta.x
